@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+   <head>
+ 
+      <meta charset="UTF-8" />
+	  <meta name="author"  content="Kebin Xu" />
+	  <meta name="description"  content="Kebin Xu's homepage" />
+	  <meta name="keywords"  content="computer science"  />
+      <title>Kebin's Home Page</title>
+      <link href="camstyles.css" rel="stylesheet" type="text/css" />
+   </head>
+   
+
+   <body>
+
+      <header>
+         <img src="img/sxuk1.jpg" alt="Kebin Xu"  />
+		 <section id="bb">
+		<h1>Kebin Xu </h1>
+		<h3> Instructor</h3>
+		<h4> Office: HWEA 306 <br>			
+	Email: xuk(at)cofc.edu
+		</h4>
+		</section>
+      </header>
+	<nav>
+     <ul>
+        <li><a href="index.htm" >Teaching</a></li>
+        <li><a href="schedule1.htm" >Schedule</a></li>
+        <li><a href="links.htm" >Links</a></li>
+     </ul>
+   </nav>
+      <section>
+
+
+<ul>
+   
+   
+  
+	<li><a href="/CSCI218/www/csci218login.php">CSCI 218/L Engineering Programming I</a></li>
+   <li><a href="/CSCI220S21/www/csci220login.php">CSCI 220/L Computer Programming I </a></li>
+   <li><a href="/CSCI215/www/csci215login.php">CSCI 215 Website Programming</a></li>
+   <li><a href="/CSCI250/www/csci250login.php">CSCI 250 Introduction to Computer Organization </a></li>
+   <li><a href="/CSCI250L/csci250Llogin.php">CSCI 250L Microcontroller and Assembly Programming Lab</a></li>
+   <li><a href="/DATA101S23/www/data101login.php">DATA 101 Introduction To Data Science</a></li>
+   <li><a href="/DATA210/www/data210login.php">DATA 210 Dataset Organization and Management</a></li>
+   <li><a href="/CSCI334/www/csci334login.php">CSCI 334 Data Mining</a></li>
+  
+
+	
+</ul>
+      </section>
+
+      <aside>
+	 
+         <h1><b>Verse of the Month</b></h1>
+	  <blockquote>	  
+ "Commit your way to the Lord;
+    trust in him and he will do this" 
+	<br> &nbsp; &nbsp; &nbsp;
+	&#8212; <cite>Psalm 37:5</cite>
+	
+	</blockquote>
+	
+
+
+      </aside>
+
+      <footer>
+         <address>
+            <a href="https://compsci.cofc.edu/">Dept. of Computer Science</a>, 
+		&nbsp;&#9728;&nbsp;	<a href="https://cofc.edu/">College of Charleston</a>
+         </address>
+      </footer>
+
+   </body>
+
+
+
+<script>
+  
+   
+   function onClickBakery(){
+     var foodList = ["mis","snailClose","caterpillar1","tiramisu", "braidBread1", "moonCake","spiralCake","butterflyer1","caterpillarClose",
+     "butterfly2","spiralCake2","flower","mangoPutting","snailBread"];
+     var bakery = randomN(8,foodList);
+   
+     onClickFood('bakery/',bakery);
+ 
+   }
+   function randomN(n,items) {
+    if (n <= items.length)
+    {
+      var newItems = [];
+      var nItems = [...items];
+      for (var i = 0; i< n; i++) {
+        var newItem = nItems.splice(Math.floor(Math.random()*nItems.length),1);
+        newItems[i] = newItem;
+
+      }
+      return newItems;
+    }
+  }
+  function onClickFood(path,foodList)
+{
+// Loop to fill-in the innerHTML text of each of the above blank <p> elements
+  // so each shows the name of a bakery taken from our list of foods.
+
+  // (1) Declare list variable foodList that contains strings 
+  
+  //console.log(foodList.length);
+  
+// (2) Declare variable pList to be assigned list of all elements whose tag name is "p".
+  var pList = document.getElementsByTagName('p');
+
+  // (3) Declare variable imgList to be assigned list of all elements whose tag name is "img".
+  var imgList = document.getElementsByTagName('img');
+// (4) Declare and initialize a loop counter variable i to begin at 0.
+  var i = 0;
+  
+// Begin a while loop that will visit each element in the list 
+  while ( i< foodList.length) {
+
+
+   // (4a) Assign the innerHTML attribute of each pList element to
+   //      be equal to one of the string values in foodList.
+   //      Use the same loop counter variable i to select into both lists
+   //      pList and foodList.
+
+   pList[i].innerHTML = foodList[i];
+   console.log(foodList[i]);
+   // (4b) change the src attribute of
+      //  each imgList[i] to be equal to animalList[i] + ".png"
+      //We need to append the PNG extension to form a proper image filename.
+
+      imgList[i].src = path + foodList[i] + ".jpg";
+      //imgList[i].onmouseover = bigPic(this);
+
+   // (4c) Increment loop counter variable i 
+   i ++;
+  }
+}
+
+</script>
+
+</html>
